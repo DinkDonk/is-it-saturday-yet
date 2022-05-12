@@ -25,10 +25,21 @@ saturday-timer {
 }
 
 svg {
-	position: absolute;
 	display: none;
+	position: absolute;
+}
+
+#nomnom {
 	bottom: 0;
 	z-index: 0;
+}
+
+body.yes [id^="burger-"] {
+	display: block;
+}
+
+body.yes #nomnom {
+	display: block;
 }
 
 #frame1,
@@ -50,6 +61,16 @@ svg {
 
 #frame3 {
 	animation-delay: 66ms;
+}
+
+@keyframes fall {
+	from {
+		transform: translateY(-100vh) rotate(0);
+	}
+
+	to {
+		transform: translateY(100vh) rotate(1800deg);
+	}
 }
 
 @keyframes show {
