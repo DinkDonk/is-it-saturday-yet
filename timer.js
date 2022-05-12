@@ -2,6 +2,24 @@ const styleText = `
 	:host {
 		text-align: center;
 	}
+
+	.spin {
+		animation: spin 1s alternate infinite;
+	}
+
+	@keyframes spin {
+		from {
+			transform: rotate(0) scale(1);
+		}
+
+		33% {
+			transform: rotate(360deg) scale(4);
+		}
+
+		to {
+			transform: rotate(1080deg) scale(1);
+		}
+	}
 `;
 
 class SaturdayTimer extends HTMLElement {
@@ -67,6 +85,7 @@ class SaturdayTimer extends HTMLElement {
 
 		if (now.getDay() === 6) {
 			this.timerElement.innerText = 'YES!';
+			this.timerElement.classList.add('spin');
 			this.headerElement.style.display = 'none';
 
 			document.body.classList.add('yes');
@@ -75,6 +94,7 @@ class SaturdayTimer extends HTMLElement {
 		}
 
 		document.body.classList.remove('yes');
+		this.timerElement.classList.remove('spin');
 		this.headerElement.style.display = 'initial';
 
 		const timeLeft = ((6 - now.getDay()) * 86400) - ((now.getHours() * 3600) + (now.getMinutes() * 60) + now.getSeconds());
