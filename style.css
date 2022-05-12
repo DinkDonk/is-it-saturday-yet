@@ -13,6 +13,59 @@ body {
 }
 
 h1 {
+	position: relative;
 	font-size: 4rem;
 	text-align: center;
+	z-index: 1;
+}
+
+saturday-timer {
+	position: relative;
+	z-index: 1;
+}
+
+svg {
+	position: absolute;
+	display: none;
+	bottom: 0;
+	z-index: 0;
+}
+
+#frame1,
+#frame2,
+#frame3 {
+	animation-name: show;
+	animation-duration: 100ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#frame1 {
+	animation-delay: 0;
+}
+
+#frame2 {
+	animation-delay: 33ms;
+}
+
+#frame3 {
+	animation-delay: 66ms;
+}
+
+@keyframes show {
+	from {
+		opacity: 1;
+	}
+
+	32% {
+		opacity: 1;
+	}
+
+	33% {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 0;
+	}
 }

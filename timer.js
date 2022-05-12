@@ -42,8 +42,9 @@ class SaturdayTimer extends HTMLElement {
 		const now = new Date();
 
 		if (now.getDay() === 6) {
-			this.headerElement.innerText = 'YES!';
-			this.timerElement.style.display = 'none';
+			this.timerElement.innerText = 'YES!';
+			this.headerElement.style.display = 'none';
+			document.querySelector('svg').style.display = 'block';
 
 			return;
 		}
