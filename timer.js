@@ -9,15 +9,18 @@ const styleText = `
 
 	@keyframes spin {
 		from {
-			transform: rotate(0) scale(1);
+			transform: rotate(0) scale(2);
+			opacity: 0;
 		}
 
 		33% {
-			transform: rotate(360deg) scale(4);
+			transform: rotate(360deg) scale(5);
+			opacity: 1;
 		}
 
 		to {
-			transform: rotate(1080deg) scale(1);
+			transform: rotate(1080deg) scale(2);
+			opacity: 0;
 		}
 	}
 `;
